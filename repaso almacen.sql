@@ -1,5 +1,7 @@
 #1
 select codigo, nombre from proveedor where ciudad="La Plata";
+create view prueba_vistas as select codigo, nombre from proveedor where ciudad="La Plata";
+select * from prueba_vistas;
 #2
 delete from articulo where codigo not in (select articulo_codigo from compuesto_por); 
 delete from articulo where not exists 
