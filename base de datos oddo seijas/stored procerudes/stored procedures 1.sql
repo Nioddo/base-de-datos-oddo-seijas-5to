@@ -43,3 +43,111 @@ select @pip;
 drop procedure pepito2;
 
 #4. Realizar un SP que liste la cantidad de órdenes que hay por estado
+delimiter //
+create procedure pepito3 () begin
+select count(*) from orders group by status;
+end //
+delimiter ;
+call pepito3();
+drop procedure pepito3;
+
+#5 Realice un SP que liste para cada empleado con gente subordinada, cuántos empleados
+#tiene a cargo.
+delimiter //
+create procedure pepito4 () begin
+select firstName, lastName, count(salesRepEmployeeNumber) from employees join customers on salesRepEmployeeNumber=employeeNumber group by employeeNumber;
+end //
+delimiter ;
+call pepito4();
+
+#6. Realice un SP que liste el número de orden y su precio total.
+delimiter //
+create procedure pepito5 () begin
+select orderNumber, sum(quantityOrdered*priceEach) from orderdetails ;
+end //
+delimiter ;
+call pepito5();
+drop procedure pepito5;
+
+#7. Crear un SP que liste el número de cliente y nombre, junto con las órdenes asociadas a ese
+#cliente y el total por orden.
+delimiter //
+create procedure pepito6 () begin
+select customers.customerNumber, customerName, orders.orderNumber, sum(quantityOrdered*priceEach)   from customers join orders on customers.customerNumber=orders.customerNumber join orderdetails on orders.orderNumber= orderdetails.orderNumber group by orderNumber;
+end //
+delimiter ;
+call pepito6();
+drop procedure pepito6;
+
+#8. Realizar un SP que modifique el campo comments de la tabla orders. El procedimiento
+#recibe un orderNumber y el comentario. El procedimiento devuelve 1 si se encontró la
+#orden y se modificó, y 0 en caso contrario.
+
+delimiter //
+create procedure pepito7 () begin
+select customers.customerNumber, customerName, orders.orderNumber, sum(quantityOrdered*priceEach)   from customers join orders on customers.customerNumber=orders.customerNumber join orderdetails on orders.orderNumber= orderdetails.orderNumber group by orderNumber;
+end //
+delimiter ;
+call pepito6();
+drop procedure pepito7;
+
+
+#9. Crear un SP que utilice un cursor para recorrer la tabla de offices y que genere una lista con
+#las ciudades en las cuales hay oficinas. La lista tendrá que devolverse en un parámetro de
+#salida VARCHAR(4000) que contenga todas las ciudades separadas por coma.
+#getCiudadesOffices()
+	delimiter //
+    create procedure pepito8 (out citys varchar(4000)) begin
+    declare hayFilas int default 1;
+    declare aux text;
+    declare ciudades cursor for select city from offices;
+	declare continue handler for not found set hayFilas = 0;
+    open ciudades;
+    bucle: loop
+    fetch ciudades into aux;
+    if hayFilas =0 then
+    leave bucle;
+    end if;
+    set citys=concat_ws(", ", aux, citys);
+    end loop bucle;
+    close ciudades;
+	end //
+	delimiter ;
+call pepito8(@lista);
+select @lista;
+#Agregar una tabla llamada CancelledOrders con el mismo diseño que la tabla de Orders.
+#Crear un SP que recorra la tabla de orders y que cuente la cantidad de órdenes en estado
+#cancelled. El procedimiento debe insertar una fila en la tabla CancelledOrders por cada
+#orden cancelada y tiene que devolver la cantidad de órdenes canceladas.
+#insertCancelledOrders()
+create table cancelled_orders(
+	orderNumber int primary key,
+    orderDate date,
+    shippedDate date,
+    customerNumber int,
+    foreign key(customerNumber) references customers(customerNumber));	
+    select* from orders;
+delimiter //
+create procedure creation(out canti int)
+	begin 
+	declare hayFilas boolean default 1;
+    declare variable1, variable4 int;
+    declare variable2, variable3 date;
+    declare ordenesCursor cursor for select orderNumber, orderDate, shippedDate, customerNumber 
+    from orders where status="cancelled";
+    declare continue handler for not found set hayFilas=0;
+    open ordenesCursor;
+    bucle:loop
+		fetch ordenesCursor into variable1, variable2, variable3, variable4;
+        if hayFilas=0 then
+			leave bucle;
+        end if;
+        insert into cancelled_orders values(variable1, variable2, variable3, variable4);
+    end loop bucle;
+    select count(*) into canti from cancelled_orders;
+    close ordenesCursor;
+end//
+delimiter ;    
+call creation(@canti);
+select @canti;
+select * from cancelled_orders;
