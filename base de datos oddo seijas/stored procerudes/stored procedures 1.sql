@@ -151,3 +151,37 @@ delimiter ;
 call creation(@canti);
 select @canti;
 select * from cancelled_orders;
+
+
+#11
+delimiter //
+create procedure alterCommentOrder(in customerNumberP int)
+begin
+	declare Aux int default 0;
+	declare Filas boolean default 1;
+	declare comentObt varchar(500) default "";
+    declare numObt int default 0;
+    declare orderCursor cursor for select orders.comments, orders.orderNumber from orders
+    where orders.customerNumber = customerNumberP;
+	declare continue handler for not found set hayFilas = 0;
+    open orderCursor;
+    ordersLoop:loop
+		fetch orderCursor into comentarioObtenido, numeroObtenido;
+		if hayFilas = 0 then
+			leave ordersLoop;
+		end if;
+        if comentarioObtenido is null then
+            set varAux = (select sum(priceEach*quantityOrdered) from orderdetails join orders on 
+            orderdetails.orderNumber= orders.orderNumber where orderdetails.orderNumber=numeroObtenido);
+			update orders set comments = concat("el total de la orden es:"," ",varAux) where orders.orderNumber=numeroObtenido; 
+        end if;
+	end loop ordersLoop;
+    close orderCursor;
+end//
+delimiter ;
+
+
+#12
+delimiter //
+create procedure (in customerNumberP int)
+begin
