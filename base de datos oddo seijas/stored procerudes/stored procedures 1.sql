@@ -183,5 +183,66 @@ delimiter ;
 
 #12
 delimiter //
-create procedure (in customerNumberP int)
+create procedure ejer12 (out listaphone text)
 begin
+declare Aux int default 0;
+	declare numObt int default 0;
+	declare numero text;
+    declare fecha date;
+	declare custm int;
+    declare orderCursor cursor for select customers.phone, max(orderDate), customers.customerNumber from customers join orders on orders.customerNumber=customers.customerNumber where status = "Cancelled" group by customers.customerNumber;
+	declare continue handler for not found set numObt = 0;
+    
+    	set listaphone="";
+        
+    open orderCursor;
+    ordersLoop:loop
+		fetch orderCursor into numero, fecha, custm;
+		if numObt = 0 then
+			leave ordersLoop;
+		end if;
+        if not exists(select * from orders where orderDate > fecha and customerNumber=custm) then 
+        set listaphone = concat_ws(" - ", numero, listaphone);
+        end if;
+        end loop ordersLoop;
+        close orderCursor;
+        end //
+        delimiter ;
+call ejer12(@aux);
+select @aux;
+drop procedure ejer13;
+
+
+alter table  employees add column comision int;
+#13
+delimiter //
+create procedure ejer13 (out listaphone text) 
+begin
+	declare salto int default 0;
+	declare empleado int;
+	declare plata float;
+    declare ventas cursor for select amount, salesRepEmployeeNumber from payments join customers on payments.customerNumber=customers.customerNumber;
+	declare continue handler for not found set salto = 0;
+    
+        open ventas;
+    ventas:loop
+		fetch ventas into plata, empleado;
+        
+			if salto = 0 then
+			leave ventas;
+		end if;
+        
+	if plata > 100000 then
+    update employees set comision=5 where employeeNumber=empleado;
+    else if plata >50000 and plata<100000 then
+	update employees set comision=3 where employeeNumber=empleado;
+    end if;
+    end if;
+
+end loop ventas;
+        close ventas;
+	end //
+        delimiter ;
+	call ejer13(@aux);
+select @aux;
+#14
