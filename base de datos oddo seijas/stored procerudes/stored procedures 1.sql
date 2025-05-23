@@ -219,7 +219,7 @@ delimiter //
 create procedure ejer13 (out listaphone text) 
 begin
 	declare salto int default 0;
-	declare empleado int;
+	declare empleado int;                
 	declare plata float;
     declare ventas cursor for select amount, salesRepEmployeeNumber from payments join customers on payments.customerNumber=customers.customerNumber;
 	declare continue handler for not found set salto = 0;

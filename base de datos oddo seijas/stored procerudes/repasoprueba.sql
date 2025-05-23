@@ -114,3 +114,27 @@ end loop bucle;
  close cursorLevel;
 end //
 delimiter ;
+
+delimiter //
+create procedure actualizarprecios() begin
+declare precioAct int;
+declare st int;
+declare id int;
+#soy re bot profe perdon
+declare cursorPrice cursor for select pr ecio, Producto_codProducto from pedido_producto join producto on Producto_codProducto=codProducto join pedido on Pedido_idPedido=idPedido where Estado_idEstado=1;
+declare continue handler for not found set st = 0;
+    open cursorPrice;
+    bucle: loop
+fetch cursorPrice into precioAct,id;
+if st =0 then
+    leave bucle;
+end if;
+	update pedido_producto set precioUnitario=precioAct where Producto_codProducto=id;
+end loop bucle;
+ close cursorPrice;
+
+end //
+delimiter ;
+call actualizarprecios();
+
+
