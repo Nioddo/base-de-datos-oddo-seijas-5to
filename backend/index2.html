@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Añade tu nave</title>
+    <link rel="stylesheet" href="../soporte-informatico/styles2.css" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="icon" href="../soporte-informatico/imgs/Death-Star-icon-real.png" type="image/png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-starwars fixed-top">
+        <div class="container-fluid">
+            <div class="logo-container">
+               <a href="../soporte-informatico/index.html">
+                <img src="../soporte-informatico/imgs/Death-Star-icon-real.png"
+                     alt="Star Wars" 
+                     class="logo-starwars">
+                </a>
+
+                <a class="navbar-brand" href="../soporte-informatico/index2.html">Añade tu nave</a>
+            </div>
+            
+            <h1 class="navbar-title mx-auto">Foro de Naves</h1>
+            
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Buscar naves..." aria-label="Search"/>
+                <button class="btn btn-starwars" type="submit">Buscar</button>
+            </form>
+        </div>
+    </nav>
+
+  </header>
+  <main>
+    <div class="form-cont">
+      <form action="http://localhost:3000/agregar-nave" method="POST">
+        <legend class="font-color">AGREGA TU NAVE AL CATALOGO</legend>
+      
+        <!-- Nombre de la nave -->
+        <div class="mb-3">
+          <label for="nombre" class="form-label font-color">Nombre de la nave</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre" required>
+        </div>
+      
+        <!-- Tipo de nave -->
+        <div class="mb-3">
+          <label for="tipo" class="form-label font-color">Tipo de nave</label>
+          <select class="form-select" id="tipo" name="tipo" required>
+            <option value="">Menú de naves</option>
+            <option value="caza">Caza</option>
+            <option value="transporte">Nave de transporte</option>
+            <option value="capital">Nave capital</option>
+            <option value="vehiculo">Vehículo terrestre</option>
+            <option value="reconocimiento">Nave de reconocimiento</option>
+            <option value="bombardero">Bombardero</option>
+            <option value="mando">Nave de mando</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
+      
+        <!-- Facción -->
+        <div class="mb-3">
+          <label for="faccion" class="form-label font-color">Facción</label>
+          <select class="form-select" id="faccion" name="faccion" required>
+            <option value="">Facciones</option>
+            <option value="republica">República Galáctica</option>
+            <option value="imperio">Imperio Galáctico</option>
+            <option value="rebeldes">Alianza Rebelde</option>
+            <option value="nueva_republica">Nueva República</option>
+            <option value="primera_orden">Primera Orden</option>
+            <option value="separatistas">Confederación de Sistemas Independientes</option>
+            <option value="mandalorianos">Mandalorianos</option>
+            <option value="civil">Independiente / Civil</option>
+          </select>
+        </div>
+      
+        <!-- Descripción corta -->
+        <div class="mb-3">
+          <label for="descripcion_corta" class="form-label font-color">Descripción corta</label>
+          <textarea class="form-control" id="descripcion_corta" name="descripcion_corta" rows="3" required></textarea>
+        </div>
+      
+        <!-- Nombre del fan -->
+        <div class="mb-3">
+          <label for="nombre_fan" class="form-label font-color">Nombre del fan</label>
+          <input type="text" class="form-control" id="nombre_fan" name="nombre_fan" placeholder="Nombre" required>
+        </div>
+      
+        <!-- Fecha o año -->
+        <div class="mb-3">
+          <label for="fecha" class="form-label font-color">Fecha o año dentro del universo Star Wars</label>
+          <input type="text" class="form-control" id="fecha" name="fecha" placeholder="Fecha">
+        </div>
+      
+        <!-- Canon o leyenda (parte) -->
+        <div class="mb-3">
+          <label for="parte" class="form-label font-color">Canon o leyendas</label>
+          <select class="form-select" id="parte" name="parte" required>
+            <option value="">Opciones</option>
+            <option value="canon">Canónica</option>
+            <option value="leyenda">Leyenda / Universo Expandido</option>
+            <option value="ambos">Ambos</option>
+          </select>
+        </div>
+      
+        <!-- Botón -->
+        <button type="submit" class="button2">
+          <span class="actual-text">&nbsp;Enviar&nbsp;</span>
+          <span class="hover-text" aria-hidden="true">&nbsp;Enviar&nbsp;</span>
+        </button>
+      </form>
+      
+    </div>
+  </main>
+  <footer class="py-3 footerdiv text-white w-100">
+    <ul class="nav justify-content-center border-bottom border-light pb-3 mb-3">
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-white">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-white">Features</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-white">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-white">FAQs</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-white">About</a>
+      </li>
+    </ul>
+    <p class="text-center mb-0">© 2025 Company, Inc</p>
+  </footer>
+  </body>
+</html>

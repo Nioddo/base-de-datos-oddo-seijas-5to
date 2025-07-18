@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Michroma&display=swap');
+                @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+
+.backg-gray{ 
+    background-color: rgb(87, 87, 87) !important;
+}
+.font-color{
+    color: rgb(255, 251, 0) !important;
+    font-family:Michroma !important;
+}
+.font-color2{
+    color: rgb(0, 238, 255) !important;
+    font-family:Michroma !important;
+}
+
+       .navbar-starwars {
+            background: #000000;
+            border-bottom: 3px solid #FFD700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            color: #FFD700 !important;
+            font-weight: 900;
+            font-size: 1.5rem;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand:hover {
+            color: #ffffff !important;
+            text-shadow: 0 0 15px rgb(0, 225, 255);
+            transform: scale(1.05);
+        }
+        
+        .navbar-title {
+            color: #FFD700;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+            letter-spacing: 2px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-starwars {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #FFD700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+            animation: pulse 2s infinite;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-starwars:hover {
+            box-shadow: 0 0 25px rgba(255, 215, 0, 1);
+            transform: scale(1.1);
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); }
+            50% { box-shadow: 0 0 25px rgba(255, 215, 0, 0.9); }
+            100% { box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); }
+        }
+        
+        .form-control {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid #FFD700;
+            color: #FFD700;
+            border-radius: 25px;
+            padding: 0.5rem 1rem;
+            font-family: 'Orbitron', monospace;
+        }
+        
+        .form-control:focus {
+            background: rgba(0, 0, 0, 0.9);
+            border-color: #FFA500;
+            color: #FFF;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        }
+        
+        .form-control::placeholder {
+            color: rgba(255, 215, 0, 0.7);
+        }
+        
+        .btn-starwars {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            border: none;
+            color: #000;
+            font-weight: 700;
+            border-radius: 25px;
+            padding: 0.5rem 1.5rem;
+            font-family: 'Orbitron', monospace;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-starwars:hover {
+            background: linear-gradient(45deg, #FFA500, #FFD700);
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .navbar-title {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+            }
+            
+            .logo-container {
+                margin-bottom: 1rem;
+            }
+            
+            .navbar .container-fluid {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .d-flex {
+                justify-content: center;
+            }
+        }
+
+
+
+
+.filacard{
+    display: flex;
+}
+
+main {
+    background-image: url(../soporte-informatico/imgs/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin-top: 4%; 
+}
+
+@media (max-width: 768px) {
+    main {
+        margin-top: 180px; 
+    }
+}
+.card-img-top {
+    height: 200px;
+    object-fit: cover; 
+}
+.card {
+    height: 100%;
+}
+.card-body{
+    background-color: #000000	;
+}
+
+.recomendacion-tincho {
+    color: #FFD700;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem 0;
+    font-family: 'Orbitron', monospace;
+}
+  
+.footer-grande {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    font-size: 1.3rem; /* tamaño de texto general */
+}
+
+.footer-grande .icono-grande {
+    font-size: 2rem; /* tamaño de íconos */
+}
+
+.footer-grande .texto-footer {
+    font-size: 1.4rem; /* tamaño de texto específico si querés aún más grande */
+
+}
+.footerdiv {
+    background-color: #000; /* Fondo negro */
+    color: white;
+    width: 100%;
+  }
