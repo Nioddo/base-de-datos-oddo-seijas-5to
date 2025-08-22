@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="ejercicio1.css">
+<html>
+<head>
+    <title>Botón Centrado con Fondo Gris</title>
+</head>
+<body>
+    <div id="div">
+        <button onclick="cambiarcolor()">Mi Botón</button>
+    </div>
+</body>
+<script>
+    const button=document.getElementById("div");
+    function cambiarcolor(){
+        console.log(button.style.backgroundColor);
+    if(button.style.backgroundColor!="grey"){
+        button.style.backgroundColor="grey";
+    }
+        else if (button.style.backgroundColor!="green"){
+            button.style.backgroundColor="green";
+        }
+    
+    }
+
+</script>
+</html>

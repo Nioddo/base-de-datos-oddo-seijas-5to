@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pokémon Cards con Modal</title>
+  <link rel="stylesheet" href="styles5.css" />
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+  <main class="container">
+    <h1>Pokémon API</h1>
+
+    <button id="cargar">Cargar Pokémon</button>
+
+    <div id="cards"></div>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      const modal = $('#modal');
+      const modalBody = $('#modal-body');
+
+      // Cerrar modal
+      $('.close').click(() => modal.hide());
+      $(window).click(function(e) {
+        if(e.target.id === 'modal') modal.hide();
+      });
+
+      $('#cargar').click(function() {
+        $('#cards').empty();
+
+        fetch('https://pokeapi.co/api/v2/pokemon?limit=1000')
+          .then(res => res.json())
+          .then(data => {
+            data.results.forEach(pokemon => {
+              fetch(pokemon.url)
+                .then(res => res.json())
+                .then(info => {
+                  let card = `<div class="card">
+                                <img src="${info.sprites.front_default}" alt="${info.name}" />
+                                <h4>${info.name}</h4>
+                                <button class="ver-mas" data-name="${info.name}" 
+                                        data-height="${info.height}" data-weight="${info.weight}" 
+                                        data-types="${info.types.map(t=>t.type.name).join(', ')}">
+                                  Ver más
+                                </button>
+                              </div>`;
+                  $('#cards').append(card);
+                });
+            });
+          })
+          .catch(err => {
+            console.error(err);
+            alert('Error al cargar Pokémon');
+          });
+      });
+
+      // Mostrar info en modal
+      $(document).on('click', '.ver-mas', function() {
+        const name = $(this).data('name');
+        const height = $(this).data('height');
+        const weight = $(this).data('weight');
+        const types = $(this).data('types');
+
+        modalBody.html(`
+          <h2>${name}</h2>
+          <p><strong>Altura:</strong> ${height}</p>
+          <p><strong>Peso:</strong> ${weight}</p>
+          <p><strong>Tipos:</strong> ${types}</p>
+        `);
+        modal.show();
+      });
+    });
+  </script>
+</body>
+</html>

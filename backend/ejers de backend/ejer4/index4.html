@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Supermercado / Tareas</title>
+  <link rel="stylesheet" href="styles4.css">
+</head>
+<body>
+
+  <div class="contenedor">
+    <h2>Lista de Supermercado / Tareas</h2>
+    <input type="text" id="inputElemento" placeholder="Escribe un elemento...">
+    <button id="btnAgregar">Agregar</button>
+    <ul id="lista"></ul>
+  </div>
+
+  <script>
+    const input = document.getElementById("inputElemento");
+    const btnAgregar = document.getElementById("btnAgregar");
+    const lista = document.getElementById("lista");
+
+    function agregarElemento() {
+      const texto = input.value.trim();
+
+      if (texto === "") {
+        alert("No puedes agregar un elemento vacío");
+        return;
+      }
+
+      const li = document.createElement("li");
+      li.textContent = texto;
+
+      const btnEliminar = document.createElement("button");
+      btnEliminar.textContent = "X";
+      btnEliminar.classList.add("eliminar");
+
+      btnEliminar.addEventListener("click", function() {
+        lista.removeChild(li);
+      });
+
+      li.appendChild(btnEliminar);
+
+      lista.appendChild(li);
+
+      input.value = "";
+      input.focus();
+    }
+
+    btnAgregar.addEventListener("click", agregarElemento);
+
+    input.addEventListener("keypress", function(e) {
+      if (e.key === "Enter") {
+        agregarElemento();
+      }
+    });
+  </script>
+</body>
+</html>

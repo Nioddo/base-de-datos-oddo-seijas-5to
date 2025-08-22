@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulario con varios tipos de inputs</title>
+  <link rel="stylesheet" href="styles3.css" />
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+  <main class="container">
+    <h1>Registro</h1>
+
+    <form class="card" action="#" method="post" autocomplete="on">
+      <!-- Nombre -->
+      <div class="field">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" />
+        <div class="error" id="err-nombre"></div>
+      </div>
+
+      <!-- Apellido -->
+      <div class="field">
+        <label for="apellido">Apellido</label>
+        <input id="apellido" name="apellido" type="text" placeholder="Tu apellido" />
+        <div class="error" id="err-apellido"></div>
+      </div>
+
+      <!-- Edad -->
+      <div class="field">
+        <label for="edad">Edad</label>
+        <input id="edad" name="edad" type="number" placeholder="Ej: 25" />
+        <div class="error" id="err-edad"></div>
+      </div>
+
+      <!-- Teléfono -->
+      <div class="field">
+        <label for="telefono">Teléfono</label>
+        <input id="telefono" name="telefono" type="tel" placeholder="+5491112345678" />
+        <div class="error" id="err-telefono"></div>
+      </div>
+
+      <!-- Contraseña -->
+      <div class="field">
+        <label for="password">Contraseña</label>
+        <input id="password" name="password" type="password" placeholder="Mínimo 7 caracteres" />
+        <div class="error" id="err-pass"></div>
+      </div>
+
+      <button type="button">Enviar</button>
+    </form>
+
+    <div class="lista-section">
+      <h2>Tabla de elementos</h2>
+      <table id="tabla" border="1" cellpadding="5" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Teléfono</th>
+            <th>Contraseña</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Se agregarán los registros aquí -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script>
+    $(document).ready(function() {
+      $('button').click(function(event) {
+        event.preventDefault();
+
+        // Limpiar errores previos
+        $('.error').text('');
+
+        // Obtener valores y aplicar trim
+        let nombre = $('#nombre').val().trim();
+        let apellido = $('#apellido').val().trim();
+        let edad = $('#edad').val().trim();
+        let telefono = $('#telefono').val().trim();
+        let password = $('#password').val();
+
+        let valid = true;
+
+        // Validación de nombre
+        if(nombre === '' || nombre.includes(' ')) {
+          $('#err-nombre').text('El nombre no puede estar vacío ni contener espacios.');
+          valid = false;
+        }
+
+        // Validación de apellido
+        if(apellido === '' || apellido.includes(' ')) {
+          $('#err-apellido').text('El apellido no puede estar vacío ni contener espacios.');
+          valid = false;
+        }
+
+        // Validación de edad
+        if(edad === '' || isNaN(edad) || edad < 0 || edad > 120) {
+          $('#err-edad').text('Ingrese una edad válida.');
+          valid = false;
+        }
+
+        // Validación de teléfono (ej: +5491112345678 o 01112345678)
+        let telRegex = /^\+?\d{10,15}$/;
+        if(!telRegex.test(telefono)) {
+          $('#err-telefono').text('Ingrese un número de teléfono válido.');
+          valid = false;
+        }
+
+        // Validación de contraseña
+        if(password.length < 7) {
+          $('#err-pass').text('La contraseña debe tener al menos 7 caracteres.');
+          valid = false;
+        } else if(password.includes(nombre) || password.includes(apellido)) {
+          $('#err-pass').text('La contraseña no puede contener tu nombre o apellido.');
+          valid = false;
+        }
+
+        // Si todo es válido, agregar a la tabla
+        if(valid) {
+          let fila = `<tr>
+                        <td>${nombre}</td>
+                        <td>${apellido}</td>
+                        <td>${edad}</td>
+                        <td>${telefono}</td>
+                        <td>${password}</td>
+                      </tr>`;
+          $('#tabla tbody').append(fila);
+
+          // Limpiar el formulario
+          $('#nombre, #apellido, #edad, #telefono, #password').val('');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

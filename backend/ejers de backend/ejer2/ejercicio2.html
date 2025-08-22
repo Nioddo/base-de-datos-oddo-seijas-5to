@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="ejercicio2.css">
+<html>
+<head>
+  <title>Mi página web</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>Encabezado principal</h1>
+   <div id="circulo">
+  <div class="input-group flex-nowrap pos mt-3 mx-3">
+    <span class="input-group-text" id="addon-wrapping">Color</span>
+    <input type="text" class="form-control" placeholder="Escribi un color HEX" aria-label="Username" aria-describedby="addon-wrapping" id="colorHexa">
+    <button  onclick="cambiarColor()" type="submit" class="btn btn-primary ms-2" id="enviarBtn">Enviar</button>
+  </div>
+</div>
+  
+ 
+</body>
+<script>
+    const button=document.getElementById("circulo");
+    
+  function cambiarColor(){
+    const colorH=document.getElementById("colorHexa").value;
+    if(colorH[0]=="#" || colorH.lenght==7){
+           button.style.backgroundColor=colorH;
+    }
+    if(colorH[0]!="#" || colorH.lenght!=7) {
+            alert("No es hexadeciml");
+    }
+ 
+  }
+</script>
+</html>
