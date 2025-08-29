@@ -1,0 +1,191 @@
+[{
+  "_id": 1,
+  "nombre": "Juan",
+  "apellido": "Pérez",
+  "edad": 28,
+  "mail": "juan.perez@example.com",
+  "compras": [
+    {
+      "id_compra": 1,
+      "monto": 120.5,
+      "productos": [
+        "laptop",
+        "mouse",
+        "teclado"
+      ]
+    },
+    {
+      "id_compra": 2,
+      "monto": 15,
+      "productos": [
+        "cuaderno"
+      ]
+    },
+    {
+      "id_compra": 3,
+      "monto": 200,
+      "productos": [
+        "celular",
+        "funda",
+        "cargador",
+        "auriculares"
+      ]
+    }
+  ]
+},{
+  "_id": 2,
+  "nombre": "María",
+  "apellido": "Gómez",
+  "edad": 22,
+  "mail": "maria.gomez@example.com",
+  "compras": [
+    {
+      "id_compra": 4,
+      "monto": 300,
+      "productos": [
+        "televisor",
+        "soporte",
+        "hdmi",
+        "control remoto"
+      ]
+    },
+    {
+      "id_compra": 5,
+      "monto": 25.5,
+      "productos": [
+        "libro",
+        "agenda"
+      ]
+    },
+    {
+      "id_compra": 20,
+      "monto": 2500,
+      "productos": [
+        "libro",
+        "lapiz",
+        "cuaderno"
+      ]
+    }
+  ]
+},{
+  "_id": 3,
+  "nombre": "Lucas",
+  "apellido": "Martínez",
+  "edad": 35,
+  "mail": "lucas.m@gmail.com",
+  "compras": [
+    {
+      "id_compra": 6,
+      "monto": 50,
+      "productos": [
+        "mousepad"
+      ]
+    },
+    {
+      "id_compra": 7,
+      "monto": 90,
+      "productos": [
+        "cafetera",
+        "tazas",
+        "filtros",
+        "azúcar",
+        "café",
+        "leche"
+      ]
+    }
+  ]
+},{
+  "_id": 4,
+  "nombre": "Sofía",
+  "apellido": "Fernández",
+  "edad": 40,
+  "mail": "sofia.fernandez@example.com",
+  "compras": [
+    {
+      "id_compra": 8,
+      "monto": 500,
+      "productos": [
+        "heladera",
+        "freezer",
+        "organizador",
+        "luz LED",
+        "termostato",
+        "filtro de agua"
+      ]
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "68b196bfca10aba1984226d8"
+  },
+  "nombre": "luca",
+  "apellido": "seijas",
+  "edad": "17",
+  "mail": "lucaseijasgay@gmail.com",
+  "compras": [
+    {
+      "id_compra": 11,
+      "monto": 5000000,
+      "productos": [
+        "laxantes",
+        "nehu",
+        "bicicleta"
+      ]
+    },
+    {
+      "id_compra": 9,
+      "monto": 1000,
+      "productos": [
+        "bebe",
+        "gato",
+        "nenes"
+      ]
+    },
+    {
+      "id_compra": 5,
+      "monto": 34000,
+      "productos": [
+        "anashe",
+        "perro",
+        "iphone17"
+      ]
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "68b196bfca10aba1984226d9"
+  },
+  "nombre": "franco",
+  "apellido": "gonzales parodi",
+  "edad": "17",
+  "mail": "miau@gmail.com",
+  "compras": [
+    {
+      "id_compra": 6,
+      "monto": 66666,
+      "productos": [
+        "maquillaje",
+        "pepo",
+        "auto"
+      ]
+    },
+    {
+      "id_compra": 12,
+      "monto": 444,
+      "productos": [
+        "almendra",
+        "leche",
+        "pan"
+      ]
+    },
+    {
+      "id_compra": 14,
+      "monto": 34000,
+      "productos": [
+        "dea",
+        "gua",
+        "pipipi"
+      ]
+    }
+  ]
+}]

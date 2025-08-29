@@ -1,0 +1,95 @@
+1)
+db.usuario.insertMany([
+    {
+        "nombre": "luca",
+        "apellido": "seijas",
+        "edad": "17",
+        "mail": "lucaseijasgay@gmail.com",
+        "compras": [
+            {
+                "id_compra": 11,
+                "monto": 5000000,
+                "productos": [
+                    "laxantes",
+                    "nehu",
+                    "bicicleta"
+                ]
+            },
+            {
+                "id_compra": 9,
+                "monto": 1000,
+                "productos": [
+                    "bebe",
+                    "gato",
+                    "nenes"
+                ]
+            },
+            {
+                "id_compra": 5,
+                "monto": 34000,
+                "productos": [
+                    "anashe",
+                    "perro",
+                    "iphone17"
+                ]
+            }
+        ]
+    },
+    {
+        "nombre": "franco",
+        "apellido": "gonzales parodi",
+        "edad": "17",
+        "mail": "miau@gmail.com",
+        "compras": [
+            {
+                "id_compra": 6,
+                "monto": 66666,
+                "productos": [
+                    "maquillaje",
+                    "pepo",
+                    "auto"
+                ]
+            },
+            {
+                "id_compra": 12,
+                "monto": 444,
+                "productos": [
+                    "almendra",
+                    "leche",
+                    "pan"
+                ]
+            },
+            {
+                "id_compra": 14,
+                "monto": 34000,
+                "productos": [
+                    "dea",
+                    "gua",
+                    "pipipi"
+                ]
+            }
+        ]
+    }
+])
+
+2)
+db.usuario.find(
+  { edad: { $gt: 25 } }, 
+  { nombre: 1, apellido: 1, _id: 0 }
+)
+
+3)
+db.usuario.find({ compras: { $size: 2 } })
+
+4)
+db.usuario.find({}, {"compras.monto":1, _id: 0 })
+
+5)
+db.usuario.find({"compras.productos.5":{$size:5}}, {"compras.monto":1, _id: 0 })
+
+6)
+db.usuario.find({"compras.id_compra":1}, {"compras.$":1, _id: 0 })
+7)
+db.usuario.updateOne({_id: 2}, {$push: {compras: {id_compra: 20, monto: 2500, productos: ["libro","lapiz","cuaderno"]}}})
+8)
+db.usuario.updateOne({nombre: "Lucas Martinez"}, {$set: {mail: "lucas.m@gmail.com"}})

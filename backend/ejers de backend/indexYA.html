@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Personas - PedidosYa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1a3a;           /* azul profundo */
+      --bg-2:#24346e;         /* azul intermedio */
+      --text:#eaf0ff;         /* texto claro */
+      --muted:#c7cfed;        /* texto secundario */
+      --chip:#31479d;         /* chip y separadores */
+      --card:#1a2760;         /* panel central */
+      --accent:#ffd166;       /* acento suave */
+      --ok:#7bd88f;           /* verde suave */
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin:0;
+      font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: linear-gradient(120deg, var(--bg) 0%, var(--bg-2) 100%);
+      color: var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 32px;
+    }
+
+    .grid{
+      width: min(1200px, 100%);
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 1024px){ .grid{ grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 720px){ .grid{ grid-template-columns: 1fr; } }
+
+    .card{
+      background: var(--card);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,.35);
+      display:grid;
+      grid-template-columns: 220px 1fr;
+      min-height: 360px;
+      isolation: isolate;
+    }
+
+    @media (max-width: 640px){
+      .card{ grid-template-columns: 1fr; }
+    }
+
+    .left{
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      padding: 24px; display:flex; flex-direction:column; align-items:center; justify-content:center;
+      gap:16px; position: relative;
+    }
+
+    .avatar{
+      width: 150px; height:150px; border-radius: 16px; overflow:hidden; border: 3px solid rgba(255,255,255,.2);
+      box-shadow: 0 10px 20px rgba(0,0,0,.35);
+    }
+    .avatar img{ width:100%; height:100%; object-fit: cover; }
+
+    .pill{
+      padding: 6px 12px; border-radius: 999px; background: var(--chip); color: var(--text); font-size: 12px; letter-spacing:.2px;
+    }
+
+    .right{ padding: 26px 26px 20px; display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 900px){ .right{ grid-template-columns: 1fr; } }
+
+    .title{ font-size: 28px; font-weight: 700; margin: 0 0 2px 0; }
+    .subtitle{ margin:0 0 10px 0; font-weight: 400; color: var(--muted); }
+
+    .meta{ display:flex; gap: 10px; flex-wrap: wrap; margin: 8px 0 14px; }
+    .meta .chip{ background: var(--chip); border-radius: 10px; padding: 6px 10px; display:flex; align-items:center; gap:8px; font-size: 12px; color: var(--muted); }
+    .meta svg{ width: 16px; height: 16px; opacity: .9; }
+
+    .section h4{ margin:0 0 8px 0; font-size: 16px; letter-spacing:.3px; }
+    .section p{ margin:0; color: var(--muted); line-height: 1.6; }
+    .list{ margin: 8px 0 0 0; padding-left: 18px; color: var(--text); }
+    .list li{ margin: 6px 0; }
+
+    .divider{ height:1px; background: rgba(255,255,255,.08); grid-column: 1/-1; margin: 6px 0; }
+
+    .badge{ display:inline-flex; align-items:center; gap:8px; font-size:12px; color: var(--text); background: rgba(255,255,255,.08); padding:6px 10px; border-radius: 999px; }
+
+    .accent{ color: var(--accent); }
+  </style>
+</head>
+<body>
+
+  <main class="grid">
+
+    <!-- PERSONA 1: Camila Torres -->
+    <article class="card">
+      <div class="left">
+        <div class="avatar">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop" alt="Foto de Camila" />
+        </div>
+        <span class="pill">Estudiante & Barista</span>
+      </div>
+      <div class="right">
+        <header style="grid-column:1/-1">
+          <h2 class="title">Camila Torres</h2>
+          <p class="subtitle">Estudiante de Comunicación</p>
+          <div class="meta">
+            <span class="chip">
+              <!-- calendario -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              22 años
+            </span>
+            <span class="chip">
+              <!-- ubicación -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Córdoba, Argentina
+            </span>
+            <span class="chip">
+              <!-- maletín -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              Estudiante y barista part‑time
+            </span>
+          </div>
+        </header>
+
+        <section class="section">
+          <h4>Biografía</h4>
+          <p>Estudia Comunicación Social y trabaja en una cafetería. Siempre busca ahorrar tiempo y dinero, y PedidosYa le soluciona las comidas entre clases y trabajo.</p>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="section">
+          <h4>Objetivos</h4>
+          <ul class="list">
+            <li>Terminar su carrera.</li>
+            <li>Ahorrar dinero en comidas.</li>
+            <li>Ganar una beca de intercambio.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h4>Motivaciones</h4>
+          <p>Poder enfocarse en el estudio sin preocuparse por cocinar ni salir a comprar.</p>
+        </section>
+
+        <section class="section">
+          <h4>Frustraciones</h4>
+          <p>La falta de tiempo, los precios altos y los retrasos en las entregas.</p>
+        </section>
+
+        <section class="section">
+          <h4>Habilidades</h4>
+          <ul class="list">
+            <li>Organización académica</li>
+            <li>Buen manejo de apps</li>
+          </ul>
+        </section>
+      </div>
+    </article>
+
+    <!-- PERSONA 2: Nicolás Herrera (Gamer) -->
+    <article class="card">
+      <div class="left">
+        <div class="avatar">
+          <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=600&auto=format&fit=crop" alt="Foto de Nicolás" />
+        </div>
+        <span class="pill">
+            .
+        </span>
+      </div>
+      <div class="right">
+        <header style="grid-column:1/-1">
+          <h2 class="title">Nicolás Herrera</h2>
+          <p class="subtitle">Gamer competitivo y streamer</p>
+          <div class="meta">
+            <span class="chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              24 años
+            </span>
+            <span class="chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Montevideo, Uruguay
+            </span>
+            <span class="chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              Streamer de Twitch
+            </span>
+          </div>
+        </header>
+
+        <section class="section">
+          <h4>Biografía</h4>
+          <p>Jugador apasionado de FPS y MOBA, dedica gran parte de su tiempo a streamear partidas y generar comunidad online. PedidosYa es su aliado para pedir comida de madrugada sin interrumpir sus streams.</p>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="section">
+          <h4>Objetivos</h4>
+          <ul class="list">
+            <li>Crecer en Twitch y YouTube.</li>
+            <li>Conseguir un sponsor de gaming.</li>
+            <li>Competir en torneos internacionales.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h4>Motivaciones</h4>
+          <p>Convertir su pasión en un estilo de vida sostenible y ser reconocido en la escena gamer.</p>
+        </section>
+
+        <section class="section">
+          <h4>Frustraciones</h4>
+          <p>Las caídas de internet durante stream y el tiempo que pierde cuando tiene que cocinar.</p>
+        </section>
+
+        <section class="section">
+          <h4>Habilidades</h4>
+          <ul class="list">
+            <li>Reflejos rápidos</li>
+            <li>Creación de contenido</li>
+          </ul>
+        </section>
+      </div>
+    </article>
+
+    <!-- PERSONA 3: Laura Fernández -->
+    <article class="card">
+      <div class="left">
+        <div class="avatar">
+          <img src="https://images.unsplash.com/photo-1544005316-04ce1f1a1f6b?q=80&w=600&auto=format&fit=crop" alt="Foto de Laura" />
+        </div>
+        <span class="pill">Diseñadora Freelance</span>
+      </div>
+      <div class="right">
+        <header style="grid-column:1/-1">
+          <h2 class="title">Laura Fernández</h2>
+          <p class="subtitle">Diseñadora freelance y madre</p>
+          <div class="meta">
+            <span class="chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              35 años
+            </span>
+            <span class="chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Rosario, Argentina
+            </span>
+            <span class="chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+              Diseñadora gráfica
+            </span>
+          </div>
+        </header>
+
+        <section class="section">
+          <h4>Biografía</h4>
+          <p>Trabaja desde casa mientras cuida a sus hijos pequeños. Usa PedidosYa para ahorrar tiempo, pedir mercado y resolver comidas familiares de manera práctica.</p>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="section">
+          <h4>Objetivos</h4>
+          <ul class="list">
+            <li>Balancear trabajo y familia.</li>
+            <li>Optimizar el tiempo diario.</li>
+            <li>Ahorrar con combos familiares.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h4>Motivaciones</h4>
+          <p>Poder disfrutar más tiempo con su familia sin preocuparse por tareas del hogar.</p>
+        </section>
+
+        <section class="section">
+          <h4>Frustraciones</h4>
+          <p>Cuando los pedidos se retrasan y los chicos ya tienen hambre.</p>
+        </section>
+
+        <section class="section">
+          <h4>Habilidades</h4>
+          <ul class="list">
+            <li>Multitasking</li>
+            <li>Creatividad</li>
+          </ul>
+        </section>
+      </div>
+    </article>
+
+  </main>
+
+</body>
+</html>
