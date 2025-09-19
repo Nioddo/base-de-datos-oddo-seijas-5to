@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "68bae6d0e72bb9c54ec8b44d"
+  },
+  "usuario_id": {
+    "$oid": "68bae06ae72bb9c54ec8b44b"
+  },
+  "fecha": "2026-1-1",
+  "montoTotal": 4000,
+  "productos": [
+    {
+      "id": 1,
+      "cantidad": 3,
+      "precioUnitario": 200
+    }
+  ]
+}]

@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "68cd5fa70a62408883084f17"
+  },
+  "idRestaurante": 2,
+  "mensaje": "Excelente atención y comida riquísima. Volvería sin dudas.",
+  "email": "maria.lopez@example.com",
+  "estrellas": 5
+},{
+  "_id": {
+    "$oid": "68cd5fa70a62408883084f18"
+  },
+  "idRestaurante": 3,
+  "mensaje": "Las pizzas son muy buenas, pero el servicio fue algo lento ese día.",
+  "email": "juan.perez@example.com",
+  "estrellas": 3
+},{
+  "_id": {
+    "$oid": "68cd5fa70a62408883084f19"
+  },
+  "idRestaurante": 4,
+  "mensaje": "El asado estaba increíble, ambiente muy familiar y buenos precios.",
+  "email": "carla.gomez@example.com",
+  "estrellas": 4
+},{
+  "_id": {
+    "$oid": "68cd5fa70a62408883084f1a"
+  },
+  "idRestaurante": 5,
+  "mensaje": "Me encantó el sushi, presentación impecable y excelente calidad.",
+  "email": "federico.ramos@example.com",
+  "estrellas": 5
+}]

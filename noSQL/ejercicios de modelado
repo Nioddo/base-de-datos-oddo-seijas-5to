@@ -1,0 +1,102 @@
+1)db.SistemEmpleados.insertMany[{
+"nombre":"matias",
+"apellido":"faya",
+"email":"matifayado@gmail.com",
+"fechaNacimiento": "2007-9-3",
+"puesto":"limpieza",
+"carnet":{
+"numeroSerie":"15389",
+"fechaEmision": "2024-4-5",
+"fechaVencimiento": "2026-1-1"
+}
+}]
+
+
+2)
+db.SistemCompraOnline.insertMany[
+    {
+        "nombre": "luca",
+        "apellido": "seijas",
+        "email": "matifayado@gmail.com",
+        "clave": 123345,
+        "direcciones": [
+            {
+                "calle": "av.sanmartin",
+                "ciudad": "buenos aires",
+                "codigoPostal": 8000,
+                "montoTotal": 4000
+            }
+        ]
+    }
+]
+3)
+ db.SistemCompraOnline.insertMany([
+ 	{
+ 		"usuario_id": ObjectId("68bae06ae72bb9c54ec8b44b"),
+ 		"fecha": "2026-1-1",
+ 		"montoTotal": 4000,
+ 		"productos":[{
+ 				"id": 1,
+ 				"cantidad": 3,
+ 				"precioUnitario": 200
+ 			   }]
+ 	}
+ ])
+ 4)
+ db.SistemaCine.insertMany([
+ 	{
+ 		"titulo": "Titanic 2",
+ 		"año": 2026,
+ 		"genero": "accion",
+ 		"duracion": 120,
+ 		"actores":[{
+ 				"Nombre": "Leonardo",
+ 				"apellido": "Dicaprio",
+ 				"fechaNacimiento": "2026-1-1",
+ 				"nacionalidad": "paraguay"
+ 			   }]
+ 	}
+ ])
+ 
+ 5)db.SistemaColegio.insertMany([
+  {
+    "nombre": "juan",
+    "apellido": "perez",
+    "titulo": "lic.lenguas",
+    "materias": [
+      {
+        "nombre": "lengua",
+        "codigo": 123,
+        "horas": 5
+      }
+    ]
+  }
+])
+6)
+db.pacientes.insertOne({
+  nombre: "Juan",
+  apellido: "Pérez",
+  dni: "12345678",
+  fechaNacimiento:"1990-05-15",
+  telefono: "1122334455",
+  historiaClinica: {
+    numeroHistoria: 1001,
+    fechaInicio:"2020-01-10",
+    observaciones: "Paciente con antecedentes de hipertensión.",
+    registros: [
+      {
+        fechaConsulta: "2020-02-05",
+        diagnostico: "Gripe común",
+        tratamiento: "Paracetamol 500mg cada 8h",
+        medico: "Dra. González"
+      },
+      {
+        fechaConsulta: "2021-03-12",
+        diagnostico: "Hipertensión arterial",
+        tratamiento: "Losartán 50mg diario",
+        medico: "Dr. Fernández"
+      }
+    ]
+  }
+})
+ 

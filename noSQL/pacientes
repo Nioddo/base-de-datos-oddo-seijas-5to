@@ -1,0 +1,29 @@
+[{
+  "_id": {
+    "$oid": "68baf152e72bb9c54ec8b450"
+  },
+  "nombre": "Juan",
+  "apellido": "Pérez",
+  "dni": "12345678",
+  "fechaNacimiento": "1990-05-15",
+  "telefono": "1122334455",
+  "historiaClinica": {
+    "numeroHistoria": 1001,
+    "fechaInicio": "2020-01-10",
+    "observaciones": "Paciente con antecedentes de hipertensión.",
+    "registros": [
+      {
+        "fechaConsulta": "2020-02-05",
+        "diagnostico": "Gripe común",
+        "tratamiento": "Paracetamol 500mg cada 8h",
+        "medico": "Dra. González"
+      },
+      {
+        "fechaConsulta": "2021-03-12",
+        "diagnostico": "Hipertensión arterial",
+        "tratamiento": "Losartán 50mg diario",
+        "medico": "Dr. Fernández"
+      }
+    ]
+  }
+}]

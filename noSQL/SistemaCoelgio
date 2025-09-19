@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "68baef9be72bb9c54ec8b44f"
+  },
+  "nombre": "juan",
+  "apellido": "perez",
+  "titulo": "lic.lenguas",
+  "materias": [
+    {
+      "nombre": "lengua",
+      "codigo": 123,
+      "horas": 5
+    }
+  ]
+}]

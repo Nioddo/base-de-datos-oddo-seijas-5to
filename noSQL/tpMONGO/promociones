@@ -1,0 +1,73 @@
+[{
+  "_id": {
+    "$oid": "68cd5f7b0a62408883084f13"
+  },
+  "nombre": "2x1 en pizzas",
+  "idRestaurante": 2,
+  "porcentaje": "50%",
+  "especificciones": "solo viernes, aplica para salón y delivery",
+  "fechaInicio": {
+    "$date": {
+      "$numberLong": "1759341600000"
+    }
+  },
+  "fechaFin": {
+    "$date": {
+      "$numberLong": "1767311940000"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "68cd5f7b0a62408883084f14"
+  },
+  "nombre": "happy hour",
+  "idRestaurante": 3,
+  "porcentaje": "30%",
+  "especificciones": "cervezas de 19 a 21hs, no acumulable con otros descuentos",
+  "fechaInicio": {
+    "$date": {
+      "$numberLong": "1758394800000"
+    }
+  },
+  "fechaFin": {
+    "$date": {
+      "$numberLong": "1789938000000"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "68cd5f7b0a62408883084f15"
+  },
+  "nombre": "menú ejecutivo",
+  "idRestaurante": 4,
+  "porcentaje": "15%",
+  "especificciones": "válido lunes a viernes mediodía, incluye bebida sin alcohol",
+  "fechaInicio": {
+    "$date": {
+      "$numberLong": "1762344000000"
+    }
+  },
+  "fechaFin": {
+    "$date": {
+      "$numberLong": "1772722800000"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "68cd5f7b0a62408883084f16"
+  },
+  "nombre": "descuento estudiantes",
+  "idRestaurante": 5,
+  "porcentaje": "25%",
+  "especificciones": "presentando libreta universitaria, válido para menú completo",
+  "fechaInicio": {
+    "$date": {
+      "$numberLong": "1755252000000"
+    }
+  },
+  "fechaFin": {
+    "$date": {
+      "$numberLong": "1786838340000"
+    }
+  }
+}]

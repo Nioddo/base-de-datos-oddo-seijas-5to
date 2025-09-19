@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "68bada9de72bb9c54ec8b44a"
+  },
+  "nombre": "matias",
+  "apellido": "faya",
+  "email": "matifayado@gmail.com",
+  "fechaNacimiento": {
+    "$date": {
+      "$numberLong": "1188788400000"
+    }
+  },
+  "puesto": "limpieza",
+  "carnet": {
+    "numeroSerie": "15389",
+    "fechaEmision": {
+      "$date": {
+        "$numberLong": "1712286000000"
+      }
+    },
+    "fechaVencimiento": {
+      "$date": {
+        "$numberLong": "1767236400000"
+      }
+    }
+  }
+}]

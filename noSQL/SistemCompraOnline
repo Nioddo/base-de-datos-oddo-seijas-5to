@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "68bae06ae72bb9c54ec8b44b"
+  },
+  "nombre": "luca",
+  "apellido": "seijas",
+  "email": "matifayado@gmail.com",
+  "clave": 123345,
+  "direcciones": [
+    {
+      "calle": "av.sanmartin",
+      "ciudad": "buenos aires",
+      "codigoPostal": 8000,
+      "montoTotal": 4000
+    }
+  ]
+}]

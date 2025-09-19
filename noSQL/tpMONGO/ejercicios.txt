@@ -1,0 +1,317 @@
+2)
+db.Restaurante.insertMany([
+  {
+    "_id": 2,
+    "nombre": "El Buen Sabor",
+    "direccion": "Calle San Martín 1234",
+    "telefono": 1145678901,
+    "horariosAtencion": ["11:00", "15:00", "20:00"],
+    "metodosDePago": ["efectivo", "visa", "master card", "mercado pago"],
+    "menu": {
+      "principales": [{
+        "nombre": "empanadas salteñas",
+        "descripcion": "empanadas fritas rellenas de carne cortada a cuchillo",
+        "precio": 9000,
+        "categoria": "regional",
+        "observacion": "incluye picante opcional, recomendado pedir media docena"
+      }],
+      "postre": [{
+        "nombre": "helado artesanal",
+        "descripcion": "helado de dulce de leche con nueces",
+        "precio": 8000,
+        "categoria": "helados",
+        "observacion": "elaborado diariamente, puede pedirse en cucurucho"
+      }],
+      "bebida": [{
+        "nombre": "fernet con coca",
+        "precio": 9500,
+        "categoria": "con alcohol",
+        "observacion": "vaso grande, servido con mucho hielo"
+      }],
+      "vegetarianos": [{
+        "nombre": "ensalada de quinoa",
+        "descripcion": "ensalada fresca con vegetales de estación",
+        "precio": 15000,
+        "categoria": "ensaladas",
+        "observacion": "se puede agregar queso de cabra"
+      }],
+      "vegano": [{
+        "nombre": "tofu grillado",
+        "descripcion": "tofu marinado a la plancha",
+        "precio": 18000,
+        "categoria": "platos principales",
+        "observacion": "acompañado de arroz integral"
+      }],
+      "sinTACC": [{
+        "nombre": "pizza de arroz",
+        "descripcion": "masa sin gluten con muzzarella",
+        "precio": 20000,
+        "categoria": "pizzas",
+        "observacion": "tiempo de preparación 20 min"
+      }]
+    },
+    "serviciosAdicionales": ["wifi gratis", "terraza", "delivery"],
+    "eventosEspeciales": [{
+      "nombre": "cena show de tango",
+      "descripcion": "espectáculo con bailarines en vivo",
+      "fechaYhora": ISODate("2025-11-10T21:00:00Z"),
+      "requiereReserva?": true
+    }]
+  },
+  {
+    "_id": 3,
+    "nombre": "Pizza Planet",
+    "direccion": "Av. Corrientes 555",
+    "telefono": 1178901234,
+    "horariosAtencion": ["12:00", "19:00", "23:30"],
+    "metodosDePago": ["efectivo", "visa", "amex"],
+    "menu": {
+      "principales": [{
+        "nombre": "pizza napolitana",
+        "descripcion": "pizza con salsa de tomate, muzzarella y albahaca",
+        "precio": 16000,
+        "categoria": "pizzas",
+        "observacion": "masa a la piedra, cocida en horno a leña"
+      }],
+      "postre": [{
+        "nombre": "tiramisú",
+        "descripcion": "postre italiano clásico",
+        "precio": 9000,
+        "categoria": "internacionales",
+        "observacion": "preparado con café espresso"
+      }],
+      "bebida": [{
+        "nombre": "cerveza artesanal rubia",
+        "precio": 7000,
+        "categoria": "con alcohol",
+        "observacion": "botella de 500ml, producción local"
+      }],
+      "vegetarianos": [{
+        "nombre": "pizza fugazzeta",
+        "descripcion": "pizza rellena de muzzarella y cebolla",
+        "precio": 18000,
+        "categoria": "pizzas",
+        "observacion": "ideal para compartir entre 2 personas"
+      }],
+      "vegano": [{
+        "nombre": "pizza vegana",
+        "descripcion": "pizza con queso de almendras",
+        "precio": 19000,
+        "categoria": "pizzas",
+        "observacion": "tomates frescos y albahaca recién cortada"
+      }],
+      "sinTACC": [{
+        "nombre": "calzone sin gluten",
+        "descripcion": "relleno de vegetales y queso",
+        "precio": 22000,
+        "categoria": "calzones",
+        "observacion": "se prepara bajo pedido especial"
+      }]
+    },
+    "serviciosAdicionales": ["juegos para chicos", "delivery", "take away"],
+    "eventosEspeciales": [{
+      "nombre": "noche de karaoke",
+      "descripcion": "micrófono libre para los clientes",
+      "fechaYhora": ISODate("2025-09-30T22:00:00Z"),
+      "requiereReserva?": false
+    }]
+  },
+  {
+    "_id": 4,
+    "nombre": "La Parrilla Criolla",
+    "direccion": "Ruta 8 Km 35",
+    "telefono": 1133557799,
+    "horariosAtencion": ["13:00", "21:00"],
+    "metodosDePago": ["efectivo", "visa", "master card", "transferencia"],
+    "menu": {
+      "principales": [{
+        "nombre": "asado completo",
+        "descripcion": "tira de asado, chorizo y morcilla",
+        "precio": 30000,
+        "categoria": "carnes",
+        "observacion": "porción generosa para 3 personas"
+      }],
+      "postre": [{
+        "nombre": "budín de pan",
+        "descripcion": "postre clásico con caramelo",
+        "precio": 6500,
+        "categoria": "caseros",
+        "observacion": "se puede pedir con crema batida"
+      }],
+      "bebida": [{
+        "nombre": "vino malbec",
+        "precio": 12000,
+        "categoria": "con alcohol",
+        "observacion": "botella de 750ml, bodega mendocina"
+      }],
+      "vegetarianos": [{
+        "nombre": "provoleta con tomates secos",
+        "descripcion": "queso provolone a la parrilla",
+        "precio": 12000,
+        "categoria": "entradas",
+        "observacion": "servida con orégano fresco"
+      }],
+      "vegano": [{
+        "nombre": "hamburguesa de lentejas",
+        "descripcion": "con pan integral y vegetales",
+        "precio": 17000,
+        "categoria": "hamburguesas",
+        "observacion": "acompañada de papas al horno"
+      }],
+      "sinTACC": [{
+        "nombre": "tarta de zapallitos",
+        "descripcion": "sin gluten",
+        "precio": 14000,
+        "categoria": "tartas",
+        "observacion": "masa casera sin TACC"
+      }]
+    },
+    "serviciosAdicionales": ["estacionamiento", "catering"],
+    "eventosEspeciales": [{
+      "nombre": "peña folklórica",
+      "descripcion": "música y danza en vivo",
+      "fechaYhora": ISODate("2025-12-20T20:00:00Z"),
+      "requiereReserva?": true
+    }]
+  },
+  {
+    "_id": 5,
+    "nombre": "Sushi House",
+    "direccion": "Av. Libertador 876",
+    "telefono": 1122334455,
+    "horariosAtencion": ["12:30", "19:30", "23:00"],
+    "metodosDePago": ["efectivo", "visa", "master card", "mercado pago"],
+    "menu": {
+      "principales": [{
+        "nombre": "combo sushi 20 piezas",
+        "descripcion": "nigiris, rolls y sashimi",
+        "precio": 28000,
+        "categoria": "sushi",
+        "observacion": "incluye salsa de soja y wasabi"
+      }],
+      "postre": [{
+        "nombre": "mochi",
+        "descripcion": "dulce japonés de arroz glutinoso",
+        "precio": 7500,
+        "categoria": "orientales",
+        "observacion": "relleno de pasta de porotos dulces"
+      }],
+      "bebida": [{
+        "nombre": "sake",
+        "precio": 15000,
+        "categoria": "con alcohol",
+        "observacion": "servido caliente en jarrita de cerámica"
+      }],
+      "vegetarianos": [{
+        "nombre": "roll de palta",
+        "descripcion": "sushi relleno de palta fresca",
+        "precio": 19000,
+        "categoria": "sushi",
+        "observacion": "6 piezas por porción"
+      }],
+      "vegano": [{
+        "nombre": "ramen vegano",
+        "descripcion": "con caldo de vegetales y tofu",
+        "precio": 21000,
+        "categoria": "sopas",
+        "observacion": "lleva algas nori"
+      }],
+      "sinTACC": [{
+        "nombre": "sushi sin gluten",
+        "descripcion": "rolls preparados con salsa tamari",
+        "precio": 25000,
+        "categoria": "sushi",
+        "observacion": "libre de gluten certificado"
+      }]
+    },
+    "serviciosAdicionales": ["delivery", "take away", "reserva online"],
+    "eventosEspeciales": [{
+      "nombre": "noche japonesa",
+      "descripcion": "degustación con show de taiko",
+      "fechaYhora": ISODate("2026-01-15T21:00:00Z"),
+      "requiereReserva?": true
+    }]
+  }
+])
+
+db.promociones.insertMany([
+  {
+    "nombre": "2x1 en pizzas",
+    "idRestaurante": 2,
+    "porcentaje": "50%",
+    "especificciones": "solo viernes, aplica para salón y delivery",
+    "fechaInicio": ISODate("2025-10-01T18:00:00Z"),
+    "fechaFin": ISODate("2026-01-01T23:59:00Z")
+  },
+  {
+    "nombre": "happy hour",
+    "idRestaurante": 3,
+    "porcentaje": "30%",
+    "especificciones": "cervezas de 19 a 21hs, no acumulable con otros descuentos",
+    "fechaInicio": ISODate("2025-09-20T19:00:00Z"),
+    "fechaFin": ISODate("2026-09-20T21:00:00Z")
+  },
+  {
+    "nombre": "menú ejecutivo",
+    "idRestaurante": 4,
+    "porcentaje": "15%",
+    "especificciones": "válido lunes a viernes mediodía, incluye bebida sin alcohol",
+    "fechaInicio": ISODate("2025-11-05T12:00:00Z"),
+    "fechaFin": ISODate("2026-03-05T15:00:00Z")
+  },
+  {
+    "nombre": "descuento estudiantes",
+    "idRestaurante": 5,
+    "porcentaje": "25%",
+    "especificciones": "presentando libreta universitaria, válido para menú completo",
+    "fechaInicio": ISODate("2025-08-15T10:00:00Z"),
+    "fechaFin": ISODate("2026-08-15T23:59:00Z")
+  }
+]
+)
+
+db.reseñas.insertMany([
+  {
+    "idRestaurante": 2,
+    "mensaje": "Excelente atención y comida riquísima. Volvería sin dudas.",
+    "email": "maria.lopez@example.com",
+    "estrellas": 5
+  },
+  {
+    "idRestaurante": 3,
+    "mensaje": "Las pizzas son muy buenas, pero el servicio fue algo lento ese día.",
+    "email": "juan.perez@example.com",
+    "estrellas": 3
+  },
+  {
+    "idRestaurante": 4,
+    "mensaje": "El asado estaba increíble, ambiente muy familiar y buenos precios.",
+    "email": "carla.gomez@example.com",
+    "estrellas": 4
+  },
+  {
+    "idRestaurante": 5,
+    "mensaje": "Me encantó el sushi, presentación impecable y excelente calidad.",
+    "email": "federico.ramos@example.com",
+    "estrellas": 5
+  }
+]
+)
+
+3)
+db.Restaurante.count()
+4)
+db.Restaurante.find({serviciosAdicionales: "delivery"},{}).sort({nombre: 1})
+db.Restaurante.find({serviciosAdicionales: "take away"},{}).sort({nombre: -1})
+5)
+db.Restaurante.updateMany({},{$set:{ultimaActualizacion: new Date()}})
+6)
+db.promociones.find({porcentaje: "10%"},{idRestaurante: 1})
+db.Restaurante.find({_id: 2},{})
+7)
+db.promociones.find({nombre: "descuento para jubilados"},{idRestaurante: 1})
+db.Restaurante.find({_id: 5},{})
+8)
+db.Restaurante.updateMany({serviciosAdicionales: "delivery"},{$set: {horarioApertura: "11:30"}})
+9)
+db.Restaurante.find({nombre: "Musica en vivo"},{nombre: 1, telefono: 1, direccion: 1})

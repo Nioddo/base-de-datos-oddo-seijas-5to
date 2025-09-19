@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "68baed4ae72bb9c54ec8b44e"
+  },
+  "titulo": "Titanic 2",
+  "año": 2026,
+  "genero": "accion",
+  "duracion": 120,
+  "actores": [
+    {
+      "Nombre": "Leonardo",
+      "apellido": "Dicaprio",
+      "fechaNacimiento": "2026-1-1",
+      "nacionalidad": "paraguay"
+    }
+  ]
+}]
